@@ -1,0 +1,34 @@
+//import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        //Scanner sc = new Scanner(System.in);
+        char[] letters = new char[100];
+        char[] letters2 = new char[26];
+        // Creating an array of 26 lowercase letters
+        char ch = 'a';
+        for(int i=0;i<26;i++){
+            letters2[i] = ch;
+            ch++;
+        }
+        // Generating 100 lowercase letters randomly
+        for(int i=0;i<100;i++){
+            letters[i] = (char) ('a'+(Math.random()*('z'-'a'+1)));
+        }
+        //printing the array elements of 100 size array
+        System.out.println("The elements of the array are > ");
+        for(char j : letters){
+            System.out.print(j+" ");
+        }
+        // Now generating the occurrence of each 26 lowercase letters in the array of 100 letters
+        System.out.println("\n\nThe occurance of each letters are >>");
+        for(int i=0;i<26;i++) {
+            int count = 0;
+            for (int j = 0; j < 100; j++) {
+                if (letters2[i] == letters[j]) {
+                    count++;
+                }
+            }
+            System.out.println(letters2[i] + " == " + count);
+        }
+    }
+}
